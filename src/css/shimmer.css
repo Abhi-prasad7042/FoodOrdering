@@ -1,0 +1,31 @@
+.shim-search{
+    margin-top: 20px;
+    width: 50vw;
+    border-radius: 10px;
+    background-color: #f0f0f0f0;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shimmer-container{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.shimmer-card{
+    margin-top: 30px;
+    width: 250px;
+    height: 200px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out .1s;
+    /* border: 1px solid gray; */
+    background-color: #f0f0f0f0;   
+}
