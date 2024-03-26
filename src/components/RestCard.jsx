@@ -1,4 +1,4 @@
-import "../css/restcard.css"
+// import "../css/restcard.css"
 import { CARD_IMG_URL } from "./constant"
 
 const RestCard = (props) => {

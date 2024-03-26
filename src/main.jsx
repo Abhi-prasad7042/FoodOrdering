@@ -7,7 +7,7 @@ import Contact from './components/Contact.jsx'
 import Error from './components/Error.jsx'
 import Body from './components/Body.jsx'
 import RestaurantMenu from './components/RestaurantMenu.jsx'
-// import './index.css'
+import './index.css'
 
 const appRouter = createBrowserRouter([
   {

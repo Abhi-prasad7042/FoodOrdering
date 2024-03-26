@@ -1,4 +1,4 @@
-import "../css/body.css"
+// import "../css/body.css"
 import { useEffect, useState } from "react"
 import RestCard from "./RestCard"
 import Shimmer from "./Shimmer"
@@ -36,6 +36,7 @@ let Body = () =>{
             searchHandler()
         }
     }
+
 
     return Data.length ===0? (<Shimmer/>):(
         <div className="container">

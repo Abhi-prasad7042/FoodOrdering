@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import "../css/restaurantMenu.css"
+// import "../css/restaurantMenu.css"
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = ()=>{
