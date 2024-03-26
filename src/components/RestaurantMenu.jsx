@@ -1,27 +1,10 @@
-import { useEffect, useState } from "react";
-import { MENU_URL } from "./constant";
 import { useParams } from "react-router-dom";
 import "../css/restaurantMenu.css"
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = ()=>{
-    const [menu, setMenu] = useState([])
-    const [menuList, setMenuList] = useState([])
     const { restID } = useParams()
-    console.log(useParams())
-    console.log(restID)
-
-    useEffect(()=>{
-        fetchMenu()
-    }, [])
-
-    const fetchMenu = async ()=>{
-        let response = await fetch(MENU_URL + restID)
-        let data = await response.json()
-        setMenu(data)
-        setMenuList(data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards)
-        console.log(data)
-        console.log(menuList)
-    }
+    const [menu, menuList] = useRestaurantMenu(restID) //custom hook
 
     return (
         <div className="RestMenu-Container">
