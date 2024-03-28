@@ -40,19 +40,19 @@ let Body = () =>{
 
     return Data.length ===0? (<Shimmer/>):(
         <div className="container">
-            <div className="search-bar">
-                <input type="text" className="search-box" placeholder="Search Resturant or Cuisines" value={searchText}
+            <div className="border w-2/5 my-5 mx-auto flex h-10 rounded-lg shadow-xl">
+                <input type="text" className="w-96 pl-2 rounded-lg outline-none" placeholder="Search Resturant or Cuisines" value={searchText}
                 onChange={(e)=>{
                     setSearchText(e.target.value)
                 }}
 
                 onKeyPress={enterHandler}
                 />
-                <button className="btn-search"
+                <button className=" w-36 rounded-lg bg-amber-200 hover:bg-amber-300"
                 onClick={() => {searchHandler()}}
                 >Search</button>
             </div>
-            <div className="rest-container">
+            <div className="flex flex-wrap  mx-24 justify-around">
                 {filteredRest.map((items)=>
                     <Link key={items.info.id} to={"/restaurant/" + items.info.id}> <RestCard data = {items} /> </Link>
                 )}
