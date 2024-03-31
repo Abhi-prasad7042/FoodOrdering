@@ -1,6 +1,6 @@
 // import "../css/body.css"
 import { useEffect, useState } from "react"
-import RestCard from "./RestCard"
+import RestCard, {WithLabelRestCard} from "./RestCard"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
 // import { DATA } from "./constant"
@@ -10,6 +10,9 @@ let Body = () =>{
     const [filteredRest, setFilteredRest] = useState([])
     const [searchText, setSearchText] = useState("")
 
+    const NewRestCard = WithLabelRestCard(RestCard)
+
+    console.log(Data)
     useEffect(()=>{
         fetchData()
     }, [])
@@ -52,9 +55,14 @@ let Body = () =>{
                 onClick={() => {searchHandler()}}
                 >Search</button>
             </div>
-            <div className="flex flex-wrap  mx-24 justify-around">
+            <div className="flex flex-wrap  mx-24 my-10 justify-around">
                 {filteredRest.map((items)=>
-                    <Link key={items.info.id} to={"/restaurant/" + items.info.id}> <RestCard data = {items} /> </Link>
+                    <Link key={items.info.id} to={"/restaurant/" + items.info.id}> 
+                    {
+                        items.info.promoted ?(<NewRestCard data={items}/>):
+                        (<RestCard data={items}/>)
+                    }
+                    </Link>
                 )}
             </div>
         </div>
