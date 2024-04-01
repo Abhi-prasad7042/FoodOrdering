@@ -1,17 +1,24 @@
 import RestaurantListMenu from "./RestaurantListMenu";
+import { useState } from "react";
 
 const RestaurantCategory = ({data})=>{
-    const {title, itemCards} = data
+    const [showItems, setShowItems] = useState(false)
 
+    const {title, itemCards} = data
     const itemcount = itemCards ? itemCards.length : 0;
+
+    const clickHandle = ()=>{
+        setShowItems(!showItems)
+    }
+
     
     return (
-        <div className="w-full  my-4 border-t-2 border-black">
-            <div className="my-4 flex justify-between p-1">
+        <div className="w-full  my-4  border-black shadow-xl">
+            <div className="my-4 flex justify-between p-1" onClick={clickHandle}>
                 <span className="font-bold text-lg">{title} ({itemcount})</span>
-                <span>⬇️</span>
+                {showItems ?<span className="cursor-pointer" >⬆️</span>:<span className="cursor-pointer" onClick={clickHandle}>⬇️</span>}
             </div>
-            <RestaurantListMenu data = {itemCards}/>            
+            {showItems && <RestaurantListMenu data = {itemCards}/>}            
         </div>
         
     )

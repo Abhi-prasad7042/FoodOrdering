@@ -1,4 +1,4 @@
-import { LIST_MENU_IMG_URL } from "./constant";
+import {CARD_IMG_URL } from "./constant";
 
 /* eslint-disable react/jsx-key */
 const RestaurantListMenu = ({data})=>{
@@ -21,8 +21,8 @@ const RestaurantListMenu = ({data})=>{
 
                             <p className="text-gray-500">{item?.card?.info?.description}</p>
                         </div>
-
-                        <img className="w-[170px] h-[120px] rounded-lg" src={LIST_MENU_IMG_URL + item?.card?.info?.imageId} alt="" />
+                        <button className="bg-yellow-400 w-16 relative left-[104px] top-[50px] rounded-md">Add+</button>
+                        <img className="w-[180px] h-[120px] rounded-lg" src={CARD_IMG_URL + item?.card?.info?.imageId} alt="" />
                     </div>
                 ))
             }
