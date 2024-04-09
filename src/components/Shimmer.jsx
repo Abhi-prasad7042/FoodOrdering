@@ -1,4 +1,23 @@
-// import "../css/shimmer.css"
+
+export const ShimmerMenu = ()=>{
+    return(
+        <div className="w-3/5 mx-auto my-10">
+            <h1 className="w-5/12 my-10 bg-gray-200 h-11 rounded-lg"></h1>
+            <div className="h-36 bg-gray-200 my-4 rounded-xl shadow-lg"></div>
+        
+        </div>
+    )
+}
+
+export const ShimmerMenuCards = ()=>{
+    return(
+        <div className="w-full mx-auto my-8">
+            <div className="h-11 my-3 bg-gray-200 rounded-xl"></div>
+            <div className="h-11 my-3 bg-gray-200 rounded-xl"></div>
+            <div className="h-11 my-3 bg-gray-200 rounded-xl"></div>
+        </div>
+    )
+}
 
 const Shimmer = ()=>{
     return(

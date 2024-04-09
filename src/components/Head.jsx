@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 function Head() {
-
+  
     const onlineStat = useOnlineStatus()
     return (
       <nav>
-        <div className="flex justify-between px-4 bg-amber-400">
+        <div className="flex justify-between px-4 bg-[#FFCC00]">
           <div className="w-24 h-16">
               <img src={LOGO_URL} alt="" className="h-16"/>
           </div>
