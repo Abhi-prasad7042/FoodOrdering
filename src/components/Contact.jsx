@@ -1,10 +1,21 @@
+import React from 'react'
+import { useState } from 'react'
 
-const Contact = ()=>{
-    return (
-        <>
-        <h1>Contact Page</h1>
-        </>
-    )
+const Contact = () => {
+
+    const [count, setCount] = useState(0)
+    const click = ()=>{
+        console.log(count)
+        setCount(count+1)
+        console.log(count)
+    }
+
+  return (
+    <div>
+       <button onClick={click}>{count}</button>
+    </div>
+    
+  )
 }
 
-export default Contact;
+export default Contact

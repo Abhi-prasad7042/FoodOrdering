@@ -1,16 +1,22 @@
 import { useParams } from "react-router-dom";
 import RestaurantCategory from "./RestaurantCategory";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import { useState } from "react";
 
 const RestaurantMenu = ()=>{
     const { restID } = useParams()
     const [menu, menuList] = useRestaurantMenu(restID) //custom hook
+    const [showIndex, setShowIndex] = useState(0)
 
     const category = Array.isArray(menuList) ? menuList.filter((item) => {
         return (
             item.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
         );
     }) : [];
+
+    const toggleItems = (index)=>{
+        setShowIndex((prevIndex)=> prevIndex===index?null : index)
+    }
     
 
     return (
@@ -24,7 +30,8 @@ const RestaurantMenu = ()=>{
                 <p className="font-semibold text-xs">{menu?.data?.cards[2]?.card?.card?.info?.sla.lastMileTravelString} | {menu?.data?.cards[2]?.card?.card?.info?.feeDetails.message.split("|")[1]}</p>
             </div>
             {category.map((item, index)=>{
-                return <RestaurantCategory key={index} data ={item.card.card}/>
+                return <RestaurantCategory key={index} data ={item.card.card} showItems = {index===showIndex}
+                 setItems = {toggleItems}/>
             })}
         </div>
     );

@@ -1,45 +1,12 @@
-// import "../css/body.css"
-import { useEffect, useState } from "react"
 import RestCard, {WithLabelRestCard} from "./RestCard"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
-// import { DATA } from "./constant"
+import useFetch from "../utils/useFetch"
+import { DATA_URL } from "./constant"
 
 let Body = () =>{
-    const [Data, setData] = useState([])
-    const [filteredRest, setFilteredRest] = useState([])
-    const [searchText, setSearchText] = useState("")
-
+    const [Data, filteredRest, searchText, setSearchText, enterHandler, searchHandler] = useFetch(DATA_URL)
     const NewRestCard = WithLabelRestCard(RestCard)
-
-    console.log(Data)
-    useEffect(()=>{
-        fetchData()
-    }, [])
-
-    const fetchData = async ()=>{
-        let response = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=28.65200&lng=77.16630")
-        let jsdata = await response.json()
-        setData(jsdata?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants)
-        setFilteredRest(jsdata?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants)
-    }
-
-    const searchHandler = ()=>{
-        const filterRest = Data.filter((item) =>{
-            return item.info.name.toLowerCase().includes(searchText.toLowerCase())||
-            item.info.cuisines.some((cuisine) =>
-              cuisine.toLowerCase().includes(searchText.toLowerCase())
-            )}
-          );
-          setFilteredRest(filterRest);
-    }
-
-    const enterHandler = (e)=>{
-        if (e.key ==="Enter"){
-            searchHandler()
-        }
-    }
-
 
     return Data.length ===0? (<Shimmer/>):(
         <div className="container">
@@ -55,7 +22,7 @@ let Body = () =>{
                 onClick={() => {searchHandler()}}
                 >Search</button>
             </div>
-            <div className="flex flex-wrap  mx-24 my-10 justify-around">
+            <div className="flex flex-wrap  w-9/12 mx-auto my-10 justify-around">
                 {filteredRest.map((items)=>
                     <Link key={items.info.id} to={"/restaurant/" + items.info.id}> 
                     {

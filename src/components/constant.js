@@ -4,6 +4,8 @@ export const CARD_IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload
 
 export const MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.65200&lng=77.16630&restaurantId="
 
+export const DATA_URL = "https://www.swiggy.com/mapi/homepage/getCards?lat=28.65200&lng=77.16630"
+
 export const DATA = [
   {
   "info": {

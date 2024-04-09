@@ -1,20 +1,19 @@
 import RestaurantListMenu from "./RestaurantListMenu";
 import { useState } from "react";
 
-const RestaurantCategory = ({data})=>{
-    const [showItems, setShowItems] = useState(false)
+const RestaurantCategory = ({data, showItems, setItems})=>{
 
     const {title, itemCards} = data
     const itemcount = itemCards ? itemCards.length : 0;
 
     const clickHandle = ()=>{
-        setShowItems(!showItems)
+        setItems()
     }
 
     
     return (
         <div className="w-full  my-4  border-black shadow-xl">
-            <div className="my-4 flex justify-between p-1" onClick={clickHandle}>
+            <div className="my-4 flex justify-between p-1 cursor-pointer" onClick={clickHandle}>
                 <span className="font-bold text-lg">{title} ({itemcount})</span>
                 {showItems ?<span className="cursor-pointer" >⬆️</span>:<span className="cursor-pointer" onClick={clickHandle}>⬇️</span>}
             </div>
