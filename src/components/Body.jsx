@@ -2,7 +2,7 @@ import RestCard, {WithLabelRestCard} from "./RestCard"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
 import useFetch from "../utils/useFetch"
-import { DATA_URL } from "./constant"
+import { DATA_URL } from "../utils/constant"
 
 let Body = () =>{
     const [Data, filteredRest, searchText, setSearchText, enterHandler, searchHandler] = useFetch(DATA_URL)

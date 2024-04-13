@@ -1,4 +1,4 @@
-import {CARD_IMG_URL } from "./constant";
+import {CARD_IMG_URL } from "../utils/constant";
 
 /* eslint-disable react/jsx-key */
 const RestaurantListMenu = ({data})=>{

@@ -1,11 +1,8 @@
-import { LOGO_URL } from "./constant";
-// import "../css/head.css"
+import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
 
 function Head() {
-  
-    const onlineStat = useOnlineStatus()
+
     return (
       <nav>
         <div className="flex justify-between px-4 bg-[#FFCC00]">
@@ -19,7 +16,6 @@ function Head() {
                   <li><Link to="/contact">Contact</Link></li>
                   <li>Cart</li>
               </ul>
-              <div className="ml-20">{ onlineStat? "🟢":"🔴" }</div>
           </div>
         </div>
       </nav>
