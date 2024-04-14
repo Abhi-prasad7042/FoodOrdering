@@ -1,16 +1,17 @@
 import Head from "./components/Head"
 import { Outlet } from "react-router-dom"
-// import useOnlineStatus from "./utils/useOnlineStatus"
-// import './App.css'
+import { Provider } from "react-redux"
+import appStore from "./utils/appStore"
 
 function App() {
 
-  // const onlineStatus = useOnlineStatus()
   return (
-    <>
-      <Head />
-      <Outlet />
-    </>
+    <Provider store={appStore}>
+      <>
+        <Head />
+        <Outlet />
+      </>
+    </Provider>
   )
 }
 

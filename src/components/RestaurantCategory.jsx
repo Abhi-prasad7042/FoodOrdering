@@ -1,5 +1,4 @@
 import RestaurantListMenu from "./RestaurantListMenu";
-import { useState } from "react";
 
 const RestaurantCategory = ({data, showItems, setItems})=>{
 
@@ -10,6 +9,7 @@ const RestaurantCategory = ({data, showItems, setItems})=>{
         setItems()
     }
 
+
     
     return (
         <div className="w-full  my-4  border-black shadow-xl">
@@ -17,7 +17,7 @@ const RestaurantCategory = ({data, showItems, setItems})=>{
                 <span className="font-bold text-lg">{title} ({itemcount})</span>
                 {showItems ?<span className="cursor-pointer" >⬆️</span>:<span className="cursor-pointer" onClick={clickHandle}>⬇️</span>}
             </div>
-            {showItems && <RestaurantListMenu data = {itemCards}/>}            
+            {showItems && <RestaurantListMenu data = {itemCards} />}            
         </div>
         
     )

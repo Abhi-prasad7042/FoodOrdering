@@ -1,8 +1,21 @@
 import {CARD_IMG_URL } from "../utils/constant";
+import { useDispatch } from "react-redux";
+import { addItem, removeItem } from "../utils/cartSlice";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 /* eslint-disable react/jsx-key */
 const RestaurantListMenu = ({data})=>{
-    console.log(data)
+
+    const dispatch = useDispatch()
+    const addItemHandle = (item)=>{
+        dispatch(addItem(item))
+    }
+
+    const removeItemHandle = ()=>{
+        dispatch(removeItem())
+    }
+
     return (
         <div>
             {
@@ -21,7 +34,9 @@ const RestaurantListMenu = ({data})=>{
 
                             <p className="text-gray-500">{item?.card?.info?.description}</p>
                         </div>
-                        <button className="bg-yellow-400 w-16 relative left-[104px] top-[50px] rounded-md">Add+</button>
+                            {/* <div className="bg-yellow-400 w-16 relative left-[104px] top-[50px] rounded-md flex justify-between w-14"><button onClick={removeItemHandle}>➖</button> {counter} <button onClick={addItemHandle}>➕</button></div>: */}
+                            <button className="bg-yellow-400 w-16 relative left-[104px] top-[50px] rounded-md" onClick={() =>addItemHandle(item)}>Add+</button>
+                        
                         <img className="w-[180px] h-[120px] rounded-lg" src={CARD_IMG_URL + item?.card?.info?.imageId} alt="" />
                     </div>
                 ))

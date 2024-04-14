@@ -6,6 +6,10 @@ export const MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_M
 
 export const DATA_URL = "https://www.swiggy.com/mapi/homepage/getCards?lat=28.65200&lng=77.16630"
 
+export const CART_IMG_URL = "https://media.istockphoto.com/id/1184670036/vector/shopping-cart-line-icon-fast-buy-vector-logo.jpg?s=612x612&w=0&k=20&c=zyExmQoKgH4UZTwMa41Zo9x1TzQYcQy_5zQcHaEL0SQ="
+
+export const EMPT_CART_IMG_URL="https://assets.materialup.com/uploads/38936b35-9823-47e1-98cc-fb8b5c1d962e/preview.jpg"
+
 export const DATA = [
   {
   "info": {
