@@ -13,8 +13,8 @@ const Cart = ()=>{
         dispatch(clearCart())
     }
 
-    const removeItemHandle = ()=>{
-        dispatch(removeItem())
+    const removeItemHandle = (item)=>{
+        dispatch(removeItem(item))
     }
 
     return(
@@ -49,7 +49,7 @@ const Cart = ()=>{
                                 <p className="text-gray-500">{item.card.info.description.slice(0,40)+"..."}</p>
 
                                 </div>
-                                    <button className="bg-black text-white p-1 text-xs w-13 relative left-[93px] top-[50px] rounded-md" onClick={removeItemHandle}>Remove❌</button>
+                                    <button className="bg-black text-white p-1 text-xs w-13 relative left-[93px] top-[50px] rounded-md" onClick={()=>removeItemHandle(item)}>Remove❌</button>
                                 
                                 <img className="w-[200px] h-[110px] rounded-lg" src={CARD_IMG_URL + item?.card?.info?.imageId} alt="" />
                             </div>))

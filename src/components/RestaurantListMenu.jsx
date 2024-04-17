@@ -1,6 +1,6 @@
 import {CARD_IMG_URL } from "../utils/constant";
 import { useDispatch } from "react-redux";
-import { addItem, removeItem } from "../utils/cartSlice";
+import { addItem } from "../utils/cartSlice";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
@@ -12,9 +12,6 @@ const RestaurantListMenu = ({data})=>{
         dispatch(addItem(item))
     }
 
-    const removeItemHandle = ()=>{
-        dispatch(removeItem())
-    }
 
     return (
         <div>
