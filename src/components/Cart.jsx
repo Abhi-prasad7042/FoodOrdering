@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { clearCart, removeItem } from "../utils/cartSlice";
 import { Link } from "react-router-dom";
 import RestaurantListMenu from "./RestaurantListMenu";
+import Bill from "./Bill";
 
 const Cart = ()=>{
     const cartItems = useSelector((store)=> store.cart.items)
@@ -32,14 +33,15 @@ const Cart = ()=>{
               </div>
             </div>
           ) : (
-            <div className="w-3/4 mx-auto justify-between">
-              <div className="w-3/4 mx-auto my-5"> 
+            <div className="w-full mx-auto flex justify-around">
+              <div className="w-4/6 ml-16 mr-24"> 
                 <RestaurantListMenu data={cartItems} />
               </div>
     
-              <div className="my-5 w-4/12 ">
+              <div className="w-4/12 mr-10">
                 <h1>Bill Details</h1>
-                <hr />
+                <hr className="border-2"/>
+                <Bill data = {cartItems}/>
               </div>
             </div>
           )}

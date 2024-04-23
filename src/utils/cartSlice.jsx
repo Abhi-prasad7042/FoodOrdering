@@ -46,6 +46,7 @@ const cartSlice = createSlice({
             }
         },
         clearCart: (state)=>{
+            localStorage.clear();
             state.items.length = 0
         }
     }
