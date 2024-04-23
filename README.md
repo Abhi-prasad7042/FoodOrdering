@@ -11,6 +11,7 @@ Welcome to the Swiggy Clone project! This amazing project replicates the functio
 - **Custom Hooks**: Implement custom hooks for efficient data fetching, state management, and reusable logic.
 - **Routing with React Router**: Navigate seamlessly between different pages and components using React Router.
 - **Tailwind CSS Styling**: Create beautiful, responsive UI components with ease using Tailwind CSS.
+- **Redux**: Used redux for cart functionality everything related to cart whether additem or removeitem all things has been done by the redux.
 
 ## Installation
 
@@ -28,7 +29,7 @@ Using the Swiggy Clone is a delightful experience:
 
 1. Browse through the list of restaurants available on the homepage.
 2. Click on a restaurant to view its menu and explore delicious food options.
-3. Coming soon: Add items to your cart, proceed to checkout, and enjoy doorstep delivery of your favorite meals!
+3. Add items to your cart, proceed to checkout, and enjoy doorstep delivery of your favorite meals!
 
 ## Contributing
 
