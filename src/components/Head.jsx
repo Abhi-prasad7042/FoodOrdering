@@ -6,7 +6,7 @@ function Head() {
 
 
   const cartItem = useSelector((store)=> store.cart.items)
-  // console.log(cartItem)
+  console.log("Head",cartItem)
 
     return (
       <nav>

@@ -14,7 +14,7 @@ const RestaurantListMenu = ({data})=>{
                     
                     item.numberCount?<div key={item.card.info.id} className="my-5 p-2 flex items-center border-b-2 border-gray-200">
                     <div className=" w-[630px]">
-                    <h2 className="font-mono text-lg font-bold">{item.card.info.name} X {item.numberCount}</h2>
+                    <h2 className="font-mono text-lg font-bold">{item.card.info.name}</h2>
                     <p className="font-semibold">₹{item?.card?.info?.defaultPrice/100 || item?.card?.info?.price/100}</p>
 
                     {item?.card?.info?.ratings?.aggregatedRating.rating !==undefined ? ( // Check if aggregatedRating exists

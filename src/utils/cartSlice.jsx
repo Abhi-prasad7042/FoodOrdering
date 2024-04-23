@@ -31,7 +31,7 @@ const cartSlice = createSlice({
             const itemID = action.payload.card.info.id;
             const count = action.payload.numberCount;
           
-            if (count > 0) {
+            if (count > 1) {
               const updatedItems = state.items.map(item => {
                 if (item.card.info.id === itemID && item.numberCount > 0) {
                   return { ...item, numberCount: item.numberCount - 1 };

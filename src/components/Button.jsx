@@ -3,26 +3,39 @@ import { addItem, removeItem } from "../utils/cartSlice"
 import { useDispatch } from "react-redux"
 
 const Button= ({data})=>{
-    const [numberCount, setNumberCount] = useState(0)
+    const [numberCount, setNumberCount] = useState(-1)
 
     // useEffect(() => {
-    //     const savedCount = localStorage.getItem("numberCount");
+    //     const savedCount = localStorage.getItem(`numberCount${data.card.info.id}`);
     //     setNumberCount(parseInt(savedCount, 10))
-    // }, []);
+    // }, [data.card.info.id]);
+
+    useEffect(() => {
+        const savedCount = localStorage.getItem(`numberCount${data.card.info.id}`);
+        if (savedCount !== null && savedCount !== undefined) {
+          setNumberCount(parseInt(savedCount, 10));
+        } else {
+          setNumberCount(0);
+        }
+      }, [data.card.info.id]);
 
     const dispatch = useDispatch()
-    const addItemHandle = (item)=>{
-        const obj = {...item, numberCount: numberCount}
-        setNumberCount(numberCount+1)
-        // localStorage.setItem('numberCount', numberCount);
-        dispatch(addItem(obj))
-    }
-
-    const removeItemHandle = (item)=>{
-        // setNumberCount(numberCount-1)
-        // localStorage.setItem('numberCount', numberCount);
-        dispatch(removeItem(item))
-    }
+    const addItemHandle = (item) => {
+        const updatedCount = numberCount + 1;
+        setNumberCount(updatedCount); // Update state
+        localStorage.setItem(`numberCount${data.card.info.id}`, updatedCount);
+        console.log(updatedCount)
+        dispatch(addItem({ ...item, numberCount: updatedCount }));
+      };
+      
+      const removeItemHandle = (item) => {
+        if (numberCount > 0) {
+          const updatedCount = numberCount - 1;
+          setNumberCount(updatedCount); // Update state
+          localStorage.setItem(`numberCount${data.card.info.id}`, updatedCount); // Use updatedCount
+          dispatch(removeItem(item));
+        }
+      };
     return(
         <>
         {numberCount>0? 
