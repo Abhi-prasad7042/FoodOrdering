@@ -9,8 +9,6 @@ const RestaurantCategory = ({data, showItems, setItems})=>{
         setItems()
     }
 
-
-    
     return (
         <div className="w-full  my-4  border-black shadow-xl">
             <div className="my-4 flex justify-between p-1 cursor-pointer" onClick={clickHandle}>

@@ -21,6 +21,7 @@ const RestaurantMenu = ()=>{
     
 
     return menu.length===0?<ShimmerMenu />:(
+
         <div className="w-3/5 mx-auto my-10">
             <h1 className="text-3xl font-bold font-serif shadow-sm">{menu?.data?.cards[2]?.card?.card?.info?.name}</h1>
             <div className="border h-36 p-3 my-6 rounded-xl shadow-lg">
@@ -30,6 +31,7 @@ const RestaurantMenu = ()=>{
                 <p className="my-1 text-xs font-semibold">{menu?.data?.cards[2]?.card?.card?.info?.sla.minDeliveryTime}-{menu?.data?.cards[2]?.card?.card?.info?.sla.maxDeliveryTime} mins</p>
                 <p className="font-semibold text-xs">{menu?.data?.cards[2]?.card?.card?.info?.sla.lastMileTravelString} | {menu?.data?.cards[2]?.card?.card?.info?.feeDetails.message.split("|")[1]}</p>
             </div>
+
             {category.length===0?<ShimmerMenuCards />: category.map((item, index)=>{
                 return <RestaurantCategory key={index} data ={item.card.card} showItems = {index===showIndex}
                  setItems = {()=>toggleItems(index)}/>

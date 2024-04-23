@@ -1,5 +1,6 @@
 import { CARD_IMG_URL } from "../utils/constant"
 
+// elipse
 const RestCard = (props) => {
     const  Data = props
     const {name, cuisines, sla, avgRating, cloudinaryImageId, costForTwo} = Data.data.info

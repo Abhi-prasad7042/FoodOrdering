@@ -6,12 +6,44 @@ const cartSlice = createSlice({
         items:[]
     },
     reducers:{
-        addItem: (state, action)=>{
-            state.items.push(action.payload)
-        },
-        removeItem: (state, action)=>{
-            const itemID = action.payload.card.info.id
-            state.items = state.items.filter((item)=> item.card.info.id!== itemID)
+        addItem: (state, action) => {
+            const newItem = action.payload;
+            const newItemID = newItem.card.info.id;
+            const existingItemIndex = state.items.findIndex(item => item.card.info.id === newItemID);
+            
+            if (existingItemIndex !== -1) {
+                
+              const updatedItems = state.items.map(item => {
+                if (item.card.info.id === newItemID) {
+                  return { ...item, numberCount: item.numberCount + 1 };
+                }
+                return item;
+              });
+          
+              state.items = updatedItems;
+            } 
+            else {
+              state.items.push({ ...newItem, numberCount: 1 });
+            }
+          },
+          
+        removeItem: (state, action) => {
+            const itemID = action.payload.card.info.id;
+            const count = action.payload.numberCount;
+          
+            if (count > 0) {
+              const updatedItems = state.items.map(item => {
+                if (item.card.info.id === itemID && item.numberCount > 0) {
+                  return { ...item, numberCount: item.numberCount - 1 };
+                }
+                return item;
+              });
+              state.items = updatedItems;
+            } 
+
+            else {  
+              state.items = state.items.filter(item => item.card.info.id !== itemID);
+            }
         },
         clearCart: (state)=>{
             state.items.length = 0

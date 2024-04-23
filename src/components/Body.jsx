@@ -22,6 +22,7 @@ let Body = () =>{
                 onClick={() => {searchHandler()}}
                 >Search</button>
             </div>
+            
             <div className="flex flex-wrap  w-9/12 mx-auto my-10 justify-around">
                 {filteredRest.map((items)=>
                     <Link key={items.info.id} to={"/restaurant/" + items.info.id}> 
