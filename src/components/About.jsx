@@ -3,7 +3,7 @@ import React from "react";
 class About extends React.Component {
     render() {
         return (
-            <div className="bg-[#f5f5dc] px-10 mx-auto pt-5">
+            <div className=" px-10 mx-auto pt-5">
                 <h1 className="text-2xl">About FoodOrdering Project</h1>
                 <hr className="border-gray-300 my-1"/>
                 <p className="pt-2">Welcome to FoodOrdering, my first React project! Over the past two months, I've dedicated my free time outside of work to develop this project, drawing inspiration from the popular Swiggy web app. FoodOrdering is a platform where I've implemented various advanced React concepts to create a seamless and interactive user experience.</p>
@@ -34,7 +34,7 @@ class About extends React.Component {
                 <hr className="my-1 border-gray-300"/>
                 <p className="pt-2">If you're interested in diving into the codebase, feel free to check out the project on GitHub: <a href="https://github.com/Abhi-prasad7042/FoodOrdering" className="text-blue-500">FoodOrdering GitHub Repository</a> </p>
 
-                <p className="pt-2 my-4">Thank you for visiting FoodOrdering, and I hope you enjoy exploring the platform as much as I've enjoyed building it!</p>
+                <p className="pt-2 mb-10">Thank you for visiting FoodOrdering, and I hope you enjoy exploring the platform as much as I've enjoyed building it!</p>
                 <hr />
             </div>
         )

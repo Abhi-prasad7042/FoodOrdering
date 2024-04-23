@@ -16,7 +16,7 @@ function Head() {
       <nav>
         <div className="flex justify-between px-4 bg-[#FFCC00]">
           <div className="w-24 h-16">
-              <img src={LOGO_URL} alt="" className="h-16"/>
+              <Link to="/"><img src={LOGO_URL} alt="" className="h-16"/></Link>
           </div>
           <div className=" flex justify-around items-center">
               <ul className="w-96 flex justify-around items-center">
